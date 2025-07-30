@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: web
+  template:
+    metadata:
+      name: web-pods
+      labels:
+        app: web
+    spec:
+      containers:
+        - name: web
+          image: badzboss/loan-app-web:latest
+          ports:
+            - containerPort: 80
+          resources:
+            limits:
+              cpu: "1000m"
+              memory: "256Mi"
+            requests:
+              cpu: "500m"
+              memory: "128Mi"

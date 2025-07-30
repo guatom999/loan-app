@@ -1,0 +1,5 @@
+#Service
+kubectl apply -f ./build/redis/redis-service.yml
+
+#Deployment
+kubectl apply -f ./build/customer/customer-deployment.ym
